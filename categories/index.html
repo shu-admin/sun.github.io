@@ -24,7 +24,7 @@ if (windowWidth > 768)
 
 
     <title>分类 | rainbow blog</title>
-    <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
+    <link rel="icon" type="image/png" href="/favicon1.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
@@ -544,7 +544,7 @@ if (windowWidth > 768)
         - 1-31之间的整数，做为date对象的天数 hours - 0(午夜24点)-23之间的整数，做为date对象的小时数 minutes 
         - 0-59之间的整数，做为date对象的分钟数 seconds - 0-59之间的整数，做为date对象的秒数 microseconds 
          - 0-999之间的整数，做为date对象的毫秒数 */ 
-         var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00 
+         var t1 = Date.UTC(2020, 12, 14, 00, 00, 00); //北京时间2018-2-13 00:00:00 
         var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond); 
         var diff = t2 - t1; 
         var diffYears = Math.floor(diff / years); 
@@ -715,11 +715,9 @@ $(function () {
     
 
     
-    
-    <script type="text/javascript" size="150" alpha='0.6'
-        zIndex="-1" src="/libs/background/ribbon-refresh.min.js" async="async"></script>
-    
 
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
