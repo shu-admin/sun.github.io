@@ -962,9 +962,9 @@ if (windowWidth > 768)
     
     <div class="row">
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
+                   server="tencent"
                    type="playlist"
-                   id="503838841"
+                   id="2599092622"
                    fixed='true'
                    autoplay='false'
                    theme='#42b983'
@@ -1269,10 +1269,22 @@ $(function () {
 var OriginTitile = document.title, st; 
 document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "看不见我🙈~看不见我🙈~", clearTimeout(st)) : (document.title = "(๑•̀ㅂ•́) ✧被发现了～", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
 
-<!-- 天气接口控件 洪卫 shw2018 add 2019.09.09 --> 
- <script type="text/javascript"> WIDGET = {FID: '1tFpFZ5Mtj'} </script> <!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> --> <script type="text/javascript"> //只在桌面版网页启用特效 
-var windowWidth = $(window).width(); if (windowWidth > 768) { document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>'); } </script>
- 
+<!-- 天气接口 -->
+
+    <!-- 天气接口-->
+<script type="text/javascript">
+    WIDGET = {FID: '1tFpFZ5Mtj'}
+  </script>
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+        }
+  </script>
+
+
+
 
 <script type="text/javascript">
     //只在桌面版网页启用特效
