@@ -324,6 +324,19 @@ if (windowWidth > 768)
 </header>
 
     
+<script src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = 'Zbb123150@';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
 
 
 
@@ -471,14 +484,14 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-01-25
+                    2021-11-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    94
+                    6
                 </div>
                 
 
@@ -508,7 +521,18 @@ if (windowWidth > 768)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="见与不见"><a href="#见与不见" class="headerlink" title="见与不见"></a>见与不见</h4><h5 id="你见，或者不见我"><a href="#你见，或者不见我" class="headerlink" title="你见，或者不见我"></a>你见，或者不见我</h5><h5 id="我就在那里"><a href="#我就在那里" class="headerlink" title="我就在那里"></a>我就在那里</h5><h5 id="不悲不喜"><a href="#不悲不喜" class="headerlink" title="不悲不喜"></a>不悲不喜</h5><h5 id="你念，或者不念我"><a href="#你念，或者不念我" class="headerlink" title="你念，或者不念我"></a>你念，或者不念我</h5><h5 id="情就在那里"><a href="#情就在那里" class="headerlink" title="情就在那里"></a>情就在那里</h5><h5 id="不来不去"><a href="#不来不去" class="headerlink" title="不来不去"></a>不来不去</h5><h5 id="你爱，或者不爱我"><a href="#你爱，或者不爱我" class="headerlink" title="你爱，或者不爱我"></a>你爱，或者不爱我</h5><h5 id="爱就在那里"><a href="#爱就在那里" class="headerlink" title="爱就在那里"></a>爱就在那里</h5><h5 id="不增不减"><a href="#不增不减" class="headerlink" title="不增不减"></a>不增不减</h5><h5 id="你跟，或者不跟我"><a href="#你跟，或者不跟我" class="headerlink" title="你跟，或者不跟我"></a>你跟，或者不跟我</h5><h5 id="我的手就在你手里"><a href="#我的手就在你手里" class="headerlink" title="我的手就在你手里"></a>我的手就在你手里</h5><h5 id="不舍不弃"><a href="#不舍不弃" class="headerlink" title="不舍不弃"></a>不舍不弃</h5><h5 id="来我的怀里"><a href="#来我的怀里" class="headerlink" title="来我的怀里"></a>来我的怀里</h5><h5 id="或者"><a href="#或者" class="headerlink" title="或者"></a>或者</h5><h5 id="让我住进你的心里"><a href="#让我住进你的心里" class="headerlink" title="让我住进你的心里"></a>让我住进你的心里</h5><h5 id="默然-相爱"><a href="#默然-相爱" class="headerlink" title="默然 相爱"></a>默然 相爱</h5><h5 id="寂静-欢喜"><a href="#寂静-欢喜" class="headerlink" title="寂静 欢喜"></a>寂静 欢喜</h5>
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="39afec13b6d6fb2df0cc046c059dec24f4a845911f444cafdb61486d9007efda">c6f889959ab63fd65455a3c6cadb80e5c1c89ec9d14c3f00875b5856f7ca05bd6819183faa8f05dcebd472cf9f3e0b247a120238f3ef5e9d45307a7190f2e5e43dcc23f76f35fc54575d5969d7cbc8617bb5f35b28c97be8b434aa85179e23662f0669312fae4ae2ec92911ad152568f904f79673915eef8a00dd9f354caae98f46ed760767958cccd33322361ecadc0c54ac977094e1a1ad5c4e371b408f74179c285a7363812f39a716e3e3980ba748d99185817df48778bf2f72483188122de29451c580f0f1d1273b44a9037b42f9589c37c23c8ded6f3b3d22382e2205d9404280e5e2b0beb26ab236c2cb119650006a83b1877aad00b685365dc1347438526ccf9556735c0c0e755849b9b395b9daf9bf2627c727793a555e8101c5bae496fbd6ff9de32b45bf04942b87992cf7c0dedc3a3f08d670816de14aa6ffad8f52304235ba9cd8695ce307b00c4b4fcd47ad835ea4d70ec14142fd13da91f9ffd255549c1d141b2d22b3c17e50175df2c2874848e9c04f77ff337fd44bd0a08da8a6a8d0a8046428a3c5d3d0a9964acc4211f592d422521f2f4bcd97c9b8c4b4135e26864423093aeef7c8d5d351fca7e4c57e96fae5247c2613b20c05187f1a0476f8427cb3b5dc7441a0414054103b53853d44e79aeaa7e8a720a3082d2e9e2122401a029e9dd708c990954a2d9b265e59b3edd68199d19de933efa7844198f74fb291066229c7511254bb0cb7e2ae79ad0cde693d33d0b4f16237a3262e4d5be9ac1bf7139b78420cc8751bc8d2e0a81f3c6feca8a218fce011d676e75a7224d1210d1f2c48783b20a494217c8ddbbea7fa35e8ee5422e4d344e05ead59ec0a91d76eeb71fb5d5bad36db5b1a659c78eea2ea77967f0582516fccfa438aa24fe6280f126a49f71078d4f598256ba39740e504c0c074cfd84b1e8e244a139602abf12a84bdd6747e12a90b545e4b157cb618c26037f7eadff286c63add655f4a042a8674a8a18f0ab7524cde4548cd19f88779d3f641169f8d4d13c9df134a1d61b071b47408a6a3ef57cb317469e52ed43280725e5aff04901c123aeb601044a6872513336c3cbcf800ebddd76aa2ee0e949ddbd10557106227de9208eb74b291e84054b025c914e288e3c49ca7ece964aceb2d9734f7ba1e73759e29b239cad6e6bd8921e6bff131ad28202de8252973270c6d951b98cecfd3cca804ed3830078e0891f0bc537cdc4111383ebb60277c7dffaf556429312cee572abc79a1d39318b8282a7ff905ed95aede1716db511ccaa7656f01778c91e6af2fd55efeef12987340b6f9181a2f5ab8108229750d17a3d254eb4188435675b7fa459eea80e7b2f1727543348c0c706f2d24da8aff0972a1cd21e3540ee873531362b8c669164e123831d58cbe7b3f97e8ae94ea9158605c399d1442491390d9061687967300970b7cd5ff4c1508774ea05b4d21e6f71a995ca0ba1585a8ff80e3222cb720b22d3e3137c8d1ae448d26f8d853ee0b49a5472f1c99880d61b8f79f1933b63ebd456f9667cb7356f595d1cb3f51219d01e728f33d5e2185c6c7dd97e57a1d95808e29ea62dfc3823e91577775b6c02054cb88b87c15101d09ff5047330972e05a6e30267a33c52a4b7b9efcd59f1caf727f1cca74b6307bbde81f44e897c6654135f7deda862ad39d1d096f6a8ae206a1a24be49bb1a77b214900b1b708afc70ecb2685ae818606efd81f488448c8beba6412acbae1b479354193b321f0d0d2130fe50494d4e08fb65fde05c7ea6357aa823d9b0603bd8146bd6313e9c50e5001297288ed2b7a32b1583296255066857fec30fb6faba243c6031ef279e0d00571e00524bd1a4c75ad6529df603e7609dc2990d8c9b4fbec9066be5c40d0f11dc334a9098db14a6436d92edf41fa91012fdc7033d5245fe94ef7abb45cb787d314bbac6f904ebe5ec389947cafb872b45706251f10f3c6af8e12db9b991911cedd58947ff0272b9ac5c3284017d6018782f25f7c626e97a13808a9c6a5146564df72e96e8cb4923f42315875e3a552b942fd2ac4ffc64ee7e426230ae40fb4d44e378f658242e3334749824fb3ec703e2832e48ac923444946c8ef50b0a49593cf196efb190355890732cdebeeafb5a6cefeb27d0b8929d78b7b2eb79e0c382cb97474ee191e10f80e2594bbe392a190366f0378144f855c7fde3ec8177f9f2fc0dd3a3ae06f8caa89c019b00d6e085dca34b4264c1add2391d2d4ca24c872a8c55b04520858f0ef958eb6803fe6d6fcaa93457682f4b3d0b750bc2faf30097b6f7407633e7b0ee8e1f5488930382a8e10164fdae70c1faab2c4497215be2056f404d7a6a2b170eb6c0a32697be454e3e027bd0070530f5a44f75522355f64f44b5964af29c8fe66380b847c12adaa99ee6863e10316bd68a6631709deffa58dac7dbf088d9e6d7131807bfa6456042fce798e3a5fdca7aae248ef98ce2599e532faf791fbb6edea584dce59586e67e4b809d01606a132379d1e24044ce1421417f77ab4fa325c8b311be7afe6fee4893313265e460ebca69fe26cff18e22108d43d5151ac634f9fc4901c71993d877988f93ef32ddcbaf63d9c342dbfb4c3d23b1ef576ea43a22b50a5444ad18e1ceac4e6391021fb07224406492c5c277b0d1fd27ef623aa8599bc3ffa5cf1fbea8fab4ef4dd79a378d9d306f9354e775c4c904562b06bdf10b97df61b2920be52228c25227047bf30906080ccc801abbfcc87740dd57cac6b5a490f0cbd451507d15042278b167cc7efb3977a51cbf1397aa1d1309235ffac6bd9417fb9ebb1eed6f1156dd7a1f7c45ab822272c63a1aa28f1a93d1d555576d41aa840d15b6a8e03a0e454e26e5ff52130cb6d1759322976399d2ceda9980f35b5911b4892af3f83afb3c51263c4077f7747b5d23fea05a559ea8e2f8e2860b37cdd0f51892779f7c0b934c7638d3d9486db2e5f9c0222252a41f681f8fce863fb83e3e7d2e994aec091e4894bbc97abd58a3b6e824b4fa1804cf3731378ac95c179dbbf76a612fcd7835dc41a3576ca2ea9d46b727c015fa6422efa1630f5aaef3a6e5fea4e2542053d5af256374cebb1afaa07364fe6a0b01255acbfcf2c6c23d72108eea48b1a512171364436dcc0d78ed43e214732531bdcf5056fe7f76fbe90f8ef59b85a585e00009cd53381e758c56a879fad1</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
             </div>
             <hr/>
@@ -898,7 +922,7 @@ if (windowWidth > 768)
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Here's something encrypted, password is required to continue reading.
                         
                     </div>
                     <div class="publish-info">
@@ -1160,7 +1184,7 @@ if (windowWidth > 768)
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.9k</span>&nbsp;字
+                class="white-color">2.8k</span>&nbsp;字
             
             
             
