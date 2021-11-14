@@ -531,17 +531,22 @@ if (windowWidth > 768)
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><h4 id="物理层的基本概念"><a href="#物理层的基本概念" class="headerlink" title="物理层的基本概念"></a>物理层的基本概念</h4><p>奈氏准则：</p>
-<p>理想低通信道：<br>$$<br>码元最高传输速率 = 2 \times W 码元/秒<br>$$</p>
-<!--W为信道带宽，单位是Hz,码元传输速率单位为码元/秒（波特率）-->
-
-<p>理想带通信道：<br>$$<br>最高码元传输速率 = W 码元/秒<br>$$</p>
-<blockquote>
-<p>码元状态数为N,每个码元携带n个bit.<br>$$<br>n = log_2N<br>$$</p>
-</blockquote>
+<p>理想低通信道：</p>
+<script type="math/tex; mode=display">
+码元最高传输速率 = 2 \times W 码元/秒</script><!--W为信道带宽，单位是Hz,码元传输速率单位为码元/秒（波特率）-->
+<p>理想带通信道：</p>
+<script type="math/tex; mode=display">
+最高码元传输速率 = W 码元/秒</script><blockquote>
+<p>码元状态数为N,每个码元携带n个bit.</p>
+<script type="math/tex; mode=display">
+n = log_2N</script></blockquote>
 <p>信噪比：</p>
-<p>信号的平均功率与噪声平均功率之比，常记为S/N，并用分贝dB作为度量单位。<br>$$<br>信噪比(dB) = 10log_{10}{\frac{S}{N}}<br>$$<br>香农公式：</p>
-<p>带宽受限且含有高斯白噪声干扰的信道的极限、无差错的信息传输速率。<br>$$<br>信道极限传输速率C = Wlog_2(1+\frac{S}{N})\quad(bit/s)\W 为信道带宽\S为信道内信号平均功率\N为信道内部的高斯噪声功率<br>$$</p>
-
+<p>信号的平均功率与噪声平均功率之比，常记为S/N，并用分贝dB作为度量单位。</p>
+<script type="math/tex; mode=display">
+信噪比(dB) = 10log_{10}{\frac{S}{N}}</script><p>香农公式：</p>
+<p>带宽受限且含有高斯白噪声干扰的信道的极限、无差错的信息传输速率。</p>
+<script type="math/tex; mode=display">
+信道极限传输速率C = Wlog_2(1+\frac{S}{N})\quad(bit/s)\\W 为信道带宽\\S为信道内信号平均功率\\N为信道内部的高斯噪声功率</script>
                 
             </div>
             <hr/>
@@ -1128,6 +1133,13 @@ if (windowWidth > 768)
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

@@ -647,12 +647,11 @@ if (windowWidth > 768)
 <li>添加首部增加开销。</li>
 </ol>
 <h4 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h4></li>
-<li><p>路由器的输入和输出端口没有直接连线</p>
-</li>
-<li><p>将收到的分组暂时放入缓存，查找转发表，找到目的地址应从哪个端口转发，把分组从适合的端口转发出去。</p>
-</li>
-<li><p>各路由器必须经常交换路由信息，动态维护转发表。</p>
-</li>
+</ol>
+<ol>
+<li>路由器的输入和输出端口没有直接连线</li>
+<li>将收到的分组暂时放入缓存，查找转发表，找到目的地址应从哪个端口转发，把分组从适合的端口转发出去。</li>
+<li>各路由器必须经常交换路由信息，动态维护转发表。</li>
 </ol>
 <h4 id="计算机网络的分类"><a href="#计算机网络的分类" class="headerlink" title="计算机网络的分类"></a>计算机网络的分类</h4><h5 id="网络作用范围"><a href="#网络作用范围" class="headerlink" title="网络作用范围"></a>网络作用范围</h5><ol>
 <li><p>广域网WAN（Wide Area Network）：通常跨越国家</p>
@@ -713,7 +712,7 @@ if (windowWidth > 768)
 <p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211114113414892.png" alt="image-20211114113414892"></p>
 </li>
 </ol>
-<ol start="5">
+<ol>
 <li><p>时延带宽积：</p>
 <p>链路的时延带宽积又称以比特为单位的链路长度。</p>
 <p>时延带宽积 = 传播时延 * 带宽</p>
@@ -727,14 +726,13 @@ if (windowWidth > 768)
 <blockquote>
 <p>1.信道利用率为信道有百分之几的时间用来数据通过的。</p>
 <p>2.网络利用率是全网络信道利用率的加权平均。</p>
-<p>信道利用率并非越高越好，当利用率增大时，信道引起的时延迅速增加。<br>$$<br>D = \frac{D_0}{1-U}<br>$$</p>
-<!--
+<p>信道利用率并非越高越好，当利用率增大时，信道引起的时延迅速增加。</p>
+<script type="math/tex; mode=display">
+D = \frac{D_0}{1-U}</script><!--
 $$
 D_0为空闲时延，D为当前时延，U为网络利用率
 $$
 -->
-
-
 </blockquote>
 </li>
 </ol>
@@ -756,12 +754,9 @@ $$
 </li>
 <li><p>差错控制</p>
 </li>
-<li><p>分段和重装</p>
-</li>
-<li><p>连接建立和释放</p>
-</li>
-<li><p>复用和分用</p>
-</li>
+<li>分段和重装</li>
+<li>连接建立和释放</li>
+<li>复用和分用</li>
 </ol>
 <h5 id="TCP-IP的四层结构："><a href="#TCP-IP的四层结构：" class="headerlink" title="TCP/IP的四层结构："></a>TCP/IP的四层结构：</h5><ol>
 <li>应用层</li>
@@ -1388,6 +1383,13 @@ $$
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
