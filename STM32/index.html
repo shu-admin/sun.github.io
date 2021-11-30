@@ -11,7 +11,7 @@ if (windowWidth > 768)
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="操作系统存储器管理（1）, SHU  CES 视觉SLAM ">
+    <meta name="keywords" content="STM32, SHU  CES 视觉SLAM ">
     <meta name="description" content="计算机科学与技术 | SLAM蒟蒻">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -23,7 +23,7 @@ if (windowWidth > 768)
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>操作系统存储器管理（1） | rainbow&#39;s blog</title>
+    <title>STM32 | rainbow&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/favicon1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/libs/awesome/css/all.css">
@@ -447,12 +447,12 @@ if (windowWidth > 768)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">操作系统存储器管理（1）</h1>
+                    <h1 class="description center-align post-title">STM32</h1>
                 </div>
             </div>
         </div>
@@ -566,25 +566,12 @@ if (windowWidth > 768)
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                <span class="chip bg-color">操作系统</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                操作系统
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -593,28 +580,28 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2020-12-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-29
+                    2021-11-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    702
+                    609
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -637,110 +624,178 @@ if (windowWidth > 768)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h5><h5 id="一、-内存（Memory）"><a href="#一、-内存（Memory）" class="headerlink" title="一、 内存（Memory）"></a>一、 内存（Memory）</h5><blockquote>
-<p>程序必须装入内存才能被执行。</p>
-<p>CPU直接访问的存储器只有<code>主存高速缓存</code>和<code>寄存器</code>。</p>
-<p>cache位于主存和CPU寄存器之间，用于协调速度差异。</p>
-</blockquote>
-<h5 id="二、-程序执行过程"><a href="#二、-程序执行过程" class="headerlink" title="二、 程序执行过程"></a>二、 程序执行过程</h5><h6 id="2-1-编译"><a href="#2-1-编译" class="headerlink" title="2.1 编译"></a>2.1 编译</h6><ul>
-<li>由编译程序将用户源代码编译成若干模块。</li>
-</ul>
-<h6 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h6><ul>
-<li>链接程序将编译的一组目标模块及所需的库函数链接在一起，形成一个完整的装入模块。</li>
-</ul>
-<h6 id="2-3-装入"><a href="#2-3-装入" class="headerlink" title="2.3 装入"></a>2.3 装入</h6><ul>
-<li><p>由装入程序将装入模块装入内存运行。</p>
-</li>
-<li><p>装入的三种方式：</p>
-<ul>
-<li><p>绝对装入</p>
-<p>只适用于单道程序环境。</p>
-<p>时间：<code>编译时</code></p>
-</li>
-<li><p>可重定位装入</p>
-<p>装入时一次完成，也称静态重定位。</p>
-<p>作业一旦进入内存，运行时地址不发生变化。</p>
-<p>时间：<code>装入时</code></p>
-</li>
-<li><p>动态运行时装入</p>
-<p>也称动态重定位。</p>
-<p>需要<code>重定位寄存器</code>的支持。</p>
-<p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105033250.png" alt="image-20211129105033250" style="zoom:50%;"></p>
-<p>地址转换时间：<code>执行时</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<h5 id="三、逻辑地址和物理地址"><a href="#三、逻辑地址和物理地址" class="headerlink" title="三、逻辑地址和物理地址"></a>三、逻辑地址和物理地址</h5><blockquote>
-<p>当装入程序将可执行代码装入内存时，必须通过地址转换将逻辑地址转为物理地址，称为地址重定位。</p>
-</blockquote>
-<ul>
-<li><p>逻辑地址(Logical address)</p>
-<p>由CPU产生。</p>
-<p>在进程中的相对地址。</p>
-</li>
-<li><p>物理地址(Physical address)</p>
-<p>内存地址，也称绝对地址。</p>
-</li>
-</ul>
-<h5 id="四、-连续分配管理方式"><a href="#四、-连续分配管理方式" class="headerlink" title="四、 连续分配管理方式"></a>四、 连续分配管理方式</h5><h6 id="4-1-单一连续分配"><a href="#4-1-单一连续分配" class="headerlink" title="4.1 单一连续分配"></a>4.1 单一连续分配</h6><blockquote>
-<p>内存分为系统区和用户区。</p>
-<ol>
-<li>系统区：操作系统使用，位于低地址部分</li>
-<li>用户区： 出系统区外，用户使用的部分。</li>
-</ol>
-</blockquote>
-<ul>
-<li><p>特点：</p>
-<p>简单，无<code>外部碎片</code></p>
-<p>只能用于<code>单用户、单任务</code>的操作系统，有<code>内部碎片</code>，存储器利用率低。</p>
-</li>
-</ul>
-<h6 id="4-2-固定分区分配"><a href="#4-2-固定分区分配" class="headerlink" title="4.2 固定分区分配"></a>4.2 固定分区分配</h6><blockquote>
-<p>最简单的一种多道程序存储管理方式。将用户空间分为若干固定的区域，每个分区只有一个作业。</p>
-</blockquote>
-<p><strong>特点</strong>：</p>
-<ul>
-<li>缺乏灵活性</li>
-<li>程序太小时，浪费内存，产生<code>内部碎片</code>。</li>
-<li><p>程序过大时，装不下。</p>
-<p><strong>数据结构：（分区说明表）</strong></p>
-<p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105548027.png" alt="image-20211129105548027" style="zoom:50%;"></p>
-</li>
-</ul>
-<h6 id="4-3-动态分区分配"><a href="#4-3-动态分区分配" class="headerlink" title="4.3 动态分区分配"></a>4.3 动态分区分配</h6><blockquote>
-<p>也称可变分区分配，事先不分配，等到进程进入内存时动态分配。</p>
-</blockquote>
-<p><strong>方法：</strong></p>
-<ul>
-<li>记录空闲内存使用情况的数据结构：<ul>
-<li>空闲分区表</li>
-<li>空闲分区链</li>
-</ul>
-</li>
-<li>存储分配算法：</li>
-<li>内存回收<ul>
-<li>回收内存块前后无空闲</li>
-<li>回收内存块前有空闲</li>
-<li>回收内存块后有空闲</li>
-<li>回收内存块前后都有空闲</li>
-</ul>
-</li>
-</ul>
-<h5 id="五、-内部碎片和外部碎片"><a href="#五、-内部碎片和外部碎片" class="headerlink" title="五、 内部碎片和外部碎片"></a>五、 内部碎片和外部碎片</h5><ul>
-<li><p>内部碎片</p>
+                <ul>
+<li><p>简介</p>
 <blockquote>
-<p>分配的内存空间比申请的内存大。</p>
+<p>这是一个完成度较高的通过PWM控制电机的文档,硬件是STM32f103,通过串口A9A10接受字符串数据存入main.c中的RX_BUF[],现设计了两个PWM输出接口A7A8.</p>
 </blockquote>
 </li>
-<li><p>外部碎片</p>
+<li><p>输出PWM频率为50Hz(20ms)</p>
+</li>
+<li><p>led0pwmval为控制高电位时间的变量</p>
+</li>
+<li><p>1000为1ms</p>
 <blockquote>
-<p>整个可用的内存空间可以满足一个请求，但它并不连续。</p>
-<p>通过<code>紧凑</code>的方式处理外部碎片。</p>
+<p>“开源就是共产主义！”——某团支书的暴论</p>
 </blockquote>
+</li>
+<li><p>main.c  链接：<a target="_blank" rel="noopener" href="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/STM32/%E6%BA%90%E7%A0%81%20%E6%94%B9%20V2.0%20%E6%9C%80%E7%BB%88%E7%89%88/USER/main.c"></a></p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"includes.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"timer.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"usart.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"stm32f10x.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"stm32f10x_tim.h"</span></span>
+ <span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span>
+ <span class="token punctuation">&#123;</span>
+	u16 t<span class="token punctuation">;</span> 
+	u16 num<span class="token punctuation">;</span>
+	u16 u<span class="token punctuation">;</span>
+	u16 len<span class="token punctuation">;</span>	
+	u16 i<span class="token punctuation">;</span>
+	
+	u16 led0pwmval<span class="token operator">=</span><span class="token number">1500</span><span class="token punctuation">;</span>
+	<span class="token comment">//u8 dir=0;	</span>
+	USART1_RX_STA<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token function">delay_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	    	 <span class="token comment">//延时函数初始化</span>
+	<span class="token function">NVIC_PriorityGroupConfig</span><span class="token punctuation">(</span>NVIC_PriorityGroup_2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//设置NVIC中断分组2:2位抢占优先级，2位响应优先级</span>
+	<span class="token function">uart1_init</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">uart3_init</span><span class="token punctuation">(</span><span class="token number">9600</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	 <span class="token comment">//串口初始化为9600</span>
+	<span class="token comment">//MOTOR_Init();</span>
+	<span class="token comment">//OLED_Init(); </span>
+	<span class="token comment">//KEY_Init();          	//初始化与按键连接的硬件接口	 </span>
+		<span class="token function">TIM3_PWM_Init</span><span class="token punctuation">(</span><span class="token number">19999</span><span class="token punctuation">,</span><span class="token number">71</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	 <span class="token comment">//不分频。PWM频率=72000000/900=80Khz 原为(899,0)</span>
+		<span class="token function">delay_ms</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">delay_ms</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+		
+<span class="token comment">//		TIM_SetCompare2(TIM3,2130);</span>
+<span class="token comment">//		delay_ms(1000);</span>
+<span class="token comment">//		delay_ms(1000); </span>
+
+		<span class="token function">TIM_SetCompare2</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span><span class="token number">1500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">delay_ms</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">delay_ms</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 	
+	 
+	<span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">&#123;</span>
+		<span class="token keyword">if</span><span class="token punctuation">(</span>USART1_RX_STA<span class="token operator">&amp;</span><span class="token number">0x8000</span><span class="token punctuation">)</span>
+		 <span class="token punctuation">&#123;</span>
+			num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//</span>
+		  len<span class="token operator">=</span>USART1_RX_STA<span class="token operator">&amp;</span><span class="token number">0x3fff</span><span class="token punctuation">;</span><span class="token comment">//得到此次接收到的数据长度</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span>t<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>t<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>t<span class="token operator">++</span><span class="token punctuation">)</span>
+				<span class="token punctuation">&#123;</span>
+				RX_BUF1<span class="token punctuation">[</span>t<span class="token punctuation">]</span> <span class="token operator">=</span> USART1_RX_BUF<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">;</span>
+				u<span class="token operator">=</span>USART1_RX_BUF<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token operator">-</span><span class="token string">'0'</span><span class="token punctuation">;</span>
+				num<span class="token operator">=</span>num<span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>u<span class="token punctuation">;</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
+					<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"start\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%c\r\n"</span><span class="token punctuation">,</span>RX_BUF1<span class="token punctuation">[</span>t<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+				<span class="token keyword">if</span> <span class="token punctuation">(</span>t<span class="token operator">==</span>len<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+					<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"\nend\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			 <span class="token punctuation">&#125;</span>
+		 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"ready\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>	<span class="token comment">//</span>
+		 <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"re23\r\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"number is %d\r\n"</span><span class="token punctuation">,</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		 USART1_RX_STA<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+			<span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'1'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'2'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'3'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'4'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'5'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">400</span><span class="token punctuation">;</span>
+			<span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>RX_BUF1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'6'</span><span class="token punctuation">)</span>
+					led0pwmval<span class="token operator">=</span><span class="token number">500</span><span class="token punctuation">;</span>
+			<span class="token function">TIM_SetCompare2</span><span class="token punctuation">(</span>TIM3<span class="token punctuation">,</span>led0pwmval<span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token function">delay_ms</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+			<span class="token comment">/*---------------加到满油门------------*/</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span>led0pwmval<span class="token operator">&lt;</span><span class="token number">2130</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span>
+			led0pwmval<span class="token operator">=</span>led0pwmval<span class="token operator">+</span><span class="token number">100</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+			<span class="token comment">/*---------------降到零油门------------*/</span>
+			<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span>led0pwmval<span class="token operator">></span><span class="token number">1400</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+			<span class="token punctuation">&#123;</span>
+			led0pwmval<span class="token operator">=</span>led0pwmval<span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">;</span>
+			<span class="token punctuation">&#125;</span>
+
+			
+			
+<span class="token comment">//		for(i=0;i&lt;12;i++)</span>
+<span class="token comment">//		&#123;</span>
+<span class="token comment">//			TIM_SetCompare2(TIM3,led0pwmval);</span>
+<span class="token comment">//			led0pwmval=led0pwmval+100;</span>
+<span class="token comment">//			delay_ms(100);</span>
+<span class="token comment">//		&#125;</span>
+		led0pwmval<span class="token operator">=</span><span class="token number">900</span><span class="token punctuation">;</span>
+		 <span class="token punctuation">&#125;</span>	
+		 
+<span class="token punctuation">&#125;</span>
+ 		<span class="token comment">//KEY_Run(); //按键扫描任务，如果有“运行中”啥的，先经过OLED_CHN，再经过Motor_RUN</span>
+
+    <span class="token comment">//OLED_CHN();//OLED显示任务		</span>
+		
+<span class="token comment">//    while(RunFlag)</span>
+<span class="token comment">//		 &#123;</span>
+<span class="token comment">//		 MOTOR_Run();//MOTOR_Run 里面写屏幕显示函数</span>
+<span class="token comment">//		 &#125;</span>
+		
+
+
+  
+		<span class="token comment">//NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级</span>
+		<span class="token comment">//uart_init(115200);	 //串口初始化为115200</span>
+		<span class="token comment">//LED_Init();			     //LED端口初始化</span>
+	
+<span class="token comment">//			if((RX_BUF1[0] == '*')&amp;&amp;(RX_BUF1[1] == 'W')&amp;&amp;(RX_BUF1[2] == 'F')&amp;&amp;(RX_BUF1[4] == '#'))</span>
+<span class="token comment">//			 &#123;</span>
+<span class="token comment">//				SourceFlag = 1;</span>
+<span class="token comment">//				TargetPos = RX_BUF1[3] - 48;</span>
+<span class="token comment">//				if((TargetPos>0)&amp;&amp;(TargetPos&lt;7))  </span>
+<span class="token comment">//         &#123;</span>
+<span class="token comment">//				  LenFlag = 1;//工作位</span>
+<span class="token comment">//				  RunFlag = 1;</span>
+<span class="token comment">//				  StartFlag = 1;</span>
+<span class="token comment">//				  ShowFlag = 1;</span>
+<span class="token comment">//				  CurrentPos = (LenFlag*6) + TargetPos;						</span>
+<span class="token comment">//				 &#125;</span>
+<span class="token comment">////				else</span>
+<span class="token comment">////				 &#123;</span>
+<span class="token comment">////				  OLED_Clear();</span>
+<span class="token comment">////				  OLED_ShowChinese(0,39);</span>
+<span class="token comment">////				  OLED_Refresh_Gram();</span>
+<span class="token comment">////				  delay_ms(1000);				</span>
+<span class="token comment">////				 &#125;</span>
+<span class="token comment">//			 &#125;</span>
+<span class="token comment">//			</span>
+<span class="token comment">//			else if((RX_BUF1[0] == '*')&amp;&amp;(RX_BUF1[1] == 'W')&amp;&amp;(RX_BUF1[2] == 'I')&amp;&amp;(RX_BUF1[4] == '#'))</span>
+<span class="token comment">//			 &#123;</span>
+<span class="token comment">//				SourceFlag = 1;</span>
+<span class="token comment">//				TargetPos = RX_BUF1[3] - 48;</span>
+<span class="token comment">//				if((TargetPos>0)&amp;&amp;(TargetPos&lt;7))  </span>
+<span class="token comment">//         &#123;</span>
+<span class="token comment">//				  LenFlag = 0;//插片位</span>
+<span class="token comment">//				  RunFlag = 1;</span>
+<span class="token comment">//				  StartFlag = 1;</span>
+<span class="token comment">//				  ShowFlag = 1;</span>
+<span class="token comment">//				  CurrentPos = (LenFlag*6) + TargetPos;		</span>
+<span class="token comment">//				  //printf("yes\r\n");					</span>
+<span class="token comment">//				 &#125;</span>
+<span class="token comment">////				else</span>
+<span class="token comment">////				 &#123;</span>
+<span class="token comment">////				  OLED_Clear();</span>
+<span class="token comment">////				  OLED_ShowChinese(0,39);</span>
+<span class="token comment">////				  OLED_Refresh_Gram();</span>
+<span class="token comment">////				  delay_ms(1000);				</span>
+<span class="token comment">////				 &#125;</span>
+<span class="token comment">//			 &#125;	</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<h5 id><a href="#" class="headerlink" title=" "></a> </h5>
+
                 
             </div>
             <hr/>
@@ -766,7 +821,7 @@ if (windowWidth > 768)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shu-rainbow.space/2021/11/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%EF%BC%881%EF%BC%89/">https://www.shu-rainbow.space/2021/11/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%EF%BC%881%EF%BC%89/</a>
+                    <a href="https://www.shu-rainbow.space/STM32/index.html">https://www.shu-rainbow.space/STM32/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -803,11 +858,7 @@ if (windowWidth > 768)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                                    <span class="chip bg-color">操作系统</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1074,13 +1125,13 @@ if (windowWidth > 768)
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2021/11/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%EF%BC%881%EF%BC%89/">
+                <a href="/STM32/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="操作系统存储器管理（1）">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="STM32">
                         
-                        <span class="card-title">操作系统存储器管理（1）</span>
+                        <span class="card-title">STM32</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1091,29 +1142,17 @@ if (windowWidth > 768)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rainbow
                             
                         </span>
                     </div>
                 </div>
 
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">操作系统</span>
-                    </a>
-                    
-                </div>
                 
             </div>
         </div>
@@ -1121,16 +1160,16 @@ if (windowWidth > 768)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0/">
+                <a href="/STM32/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="软件工程课程介绍">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="STM32">
                         
-                        <span class="card-title">软件工程课程介绍</span>
+                        <span class="card-title">STM32</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1141,28 +1180,17 @@ if (windowWidth > 768)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" class="post-category">
-                                    软件工程
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rainbow
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">
-                        <span class="chip bg-color">软件工程</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1327,13 +1355,6 @@ if (windowWidth > 768)
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>

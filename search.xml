@@ -8,7 +8,7 @@
       <link href="/2021/11/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%EF%BC%881%EF%BC%89/"/>
       <url>/2021/11/29/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86%EF%BC%881%EF%BC%89/</url>
       
-        <content type="html"><![CDATA[<h4 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h4><h5 id="一、-内存（Memory）"><a href="#一、-内存（Memory）" class="headerlink" title="一、 内存（Memory）"></a>一、 内存（Memory）</h5><blockquote><p>程序必须装入内存才能被执行。</p><p>CPU直接访问的存储器只有<code>主存高速缓存</code>和<code>寄存器</code>。</p><p>cache位于主存和CPU寄存器之间，用于协调速度差异。</p></blockquote><h5 id="二、-程序执行过程"><a href="#二、-程序执行过程" class="headerlink" title="二、 程序执行过程"></a>二、 程序执行过程</h5><h6 id="2-1-编译"><a href="#2-1-编译" class="headerlink" title="2.1 编译"></a>2.1 编译</h6><ul><li>由编译程序将用户源代码编译成若干模块。</li></ul><h6 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h6><ul><li>链接程序将编译的一组目标模块及所需的库函数链接在一起，形成一个完整的装入模块。</li></ul><h6 id="2-3-装入"><a href="#2-3-装入" class="headerlink" title="2.3 装入"></a>2.3 装入</h6><ul><li><p>由装入程序将装入模块装入内存运行。</p></li><li><p>装入的三种方式：</p><ul><li><p>绝对装入</p><p>只适用于单道程序环境。</p><p>时间：<code>编译时</code></p></li><li><p>可重定位装入</p><p>装入时一次完成，也称静态重定位。</p><p>作业一旦进入内存，运行时地址不发生变化。</p><p>时间：<code>装入时</code></p></li><li><p>动态运行时装入</p><p>也称动态重定位。</p><p>需要<code>重定位寄存器</code>的支持。</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105033250.png" alt="image-20211129105033250" style="zoom:50%;"></p><p>地址转换时间：<code>执行时</code></p></li></ul></li></ul><h5 id="三、逻辑地址和物理地址"><a href="#三、逻辑地址和物理地址" class="headerlink" title="三、逻辑地址和物理地址"></a>三、逻辑地址和物理地址</h5><blockquote><p>当装入程序将可执行代码装入内存时，必须通过地址转换将逻辑地址转为物理地址，称为地址重定位。</p></blockquote><ul><li><p>逻辑地址(Logical address)</p><p>由CPU产生。</p><p>在进程中的相对地址。</p></li><li><p>物理地址(Physical address)</p><p>内存地址，也称绝对地址。</p></li></ul><h5 id="四、-连续分配管理方式"><a href="#四、-连续分配管理方式" class="headerlink" title="四、 连续分配管理方式"></a>四、 连续分配管理方式</h5><h6 id="4-1-单一连续分配"><a href="#4-1-单一连续分配" class="headerlink" title="4.1 单一连续分配"></a>4.1 单一连续分配</h6><blockquote><p>内存分为系统区和用户区。</p><ol><li>系统区：操作系统使用，位于低地址部分</li><li>用户区： 出系统区外，用户使用的部分。</li></ol></blockquote><ul><li><p>特点：</p><p>简单，无<code>外部碎片</code></p><p>只能用于<code>单用户、单任务</code>的操作系统，有<code>内部碎片</code>，存储器利用率低。</p></li></ul><h6 id="4-2-固定分区分配"><a href="#4-2-固定分区分配" class="headerlink" title="4.2 固定分区分配"></a>4.2 固定分区分配</h6><blockquote><p>最简单的一种多道程序存储管理方式。将用户空间分为若干固定的区域，每个分区只有一个作业。</p></blockquote><p><strong>特点</strong>：</p><ul><li>缺乏灵活性</li><li>程序太小时，浪费内存，产生<code>内部碎片</code>。</li><li><p>程序过大时，装不下。</p><p><strong>数据结构：（分区说明表）</strong></p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105548027.png" alt="image-20211129105548027" style="zoom:50%;"></p></li></ul><h6 id="4-3-动态分区分配"><a href="#4-3-动态分区分配" class="headerlink" title="4.3 动态分区分配"></a>4.3 动态分区分配</h6><blockquote><p>也称可变分区分配，事先不分配，等到进程进入内存时动态分配。</p></blockquote><p><strong>方法：</strong></p><ul><li>记录空闲内存使用情况的数据结构：<ul><li>空闲分区表</li><li>空闲分区链</li></ul></li><li>存储分配算法：</li><li>内存回收<ul><li>回收内存块前后无空闲</li><li>回收内存块前有空闲</li><li>回收内存块后有空闲</li><li>回收内存块前后都有空闲</li></ul></li></ul><h5 id="五、-内部碎片和外部碎片"><a href="#五、-内部碎片和外部碎片" class="headerlink" title="五、 内部碎片和外部碎片"></a>五、 内部碎片和外部碎片</h5><ul><li><p>内部碎片</p><blockquote><p>分配的内存空间比申请的内存大。</p></blockquote></li><li><p>外部碎片</p><blockquote><p>整个可用的内存空间可以满足一个请求，但它并不连续。</p><p>通过<code>紧凑</code>的方式处理外部碎片。</p></blockquote></li></ul><h5 id><a href="#" class="headerlink" title=" "></a> </h5>]]></content>
+        <content type="html"><![CDATA[<h5 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h5><h5 id="一、-内存（Memory）"><a href="#一、-内存（Memory）" class="headerlink" title="一、 内存（Memory）"></a>一、 内存（Memory）</h5><blockquote><p>程序必须装入内存才能被执行。</p><p>CPU直接访问的存储器只有<code>主存高速缓存</code>和<code>寄存器</code>。</p><p>cache位于主存和CPU寄存器之间，用于协调速度差异。</p></blockquote><h5 id="二、-程序执行过程"><a href="#二、-程序执行过程" class="headerlink" title="二、 程序执行过程"></a>二、 程序执行过程</h5><h6 id="2-1-编译"><a href="#2-1-编译" class="headerlink" title="2.1 编译"></a>2.1 编译</h6><ul><li>由编译程序将用户源代码编译成若干模块。</li></ul><h6 id="2-2-链接"><a href="#2-2-链接" class="headerlink" title="2.2 链接"></a>2.2 链接</h6><ul><li>链接程序将编译的一组目标模块及所需的库函数链接在一起，形成一个完整的装入模块。</li></ul><h6 id="2-3-装入"><a href="#2-3-装入" class="headerlink" title="2.3 装入"></a>2.3 装入</h6><ul><li><p>由装入程序将装入模块装入内存运行。</p></li><li><p>装入的三种方式：</p><ul><li><p>绝对装入</p><p>只适用于单道程序环境。</p><p>时间：<code>编译时</code></p></li><li><p>可重定位装入</p><p>装入时一次完成，也称静态重定位。</p><p>作业一旦进入内存，运行时地址不发生变化。</p><p>时间：<code>装入时</code></p></li><li><p>动态运行时装入</p><p>也称动态重定位。</p><p>需要<code>重定位寄存器</code>的支持。</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105033250.png" alt="image-20211129105033250" style="zoom:50%;"></p><p>地址转换时间：<code>执行时</code></p></li></ul></li></ul><h5 id="三、逻辑地址和物理地址"><a href="#三、逻辑地址和物理地址" class="headerlink" title="三、逻辑地址和物理地址"></a>三、逻辑地址和物理地址</h5><blockquote><p>当装入程序将可执行代码装入内存时，必须通过地址转换将逻辑地址转为物理地址，称为地址重定位。</p></blockquote><ul><li><p>逻辑地址(Logical address)</p><p>由CPU产生。</p><p>在进程中的相对地址。</p></li><li><p>物理地址(Physical address)</p><p>内存地址，也称绝对地址。</p></li></ul><h5 id="四、-连续分配管理方式"><a href="#四、-连续分配管理方式" class="headerlink" title="四、 连续分配管理方式"></a>四、 连续分配管理方式</h5><h6 id="4-1-单一连续分配"><a href="#4-1-单一连续分配" class="headerlink" title="4.1 单一连续分配"></a>4.1 单一连续分配</h6><blockquote><p>内存分为系统区和用户区。</p><ol><li>系统区：操作系统使用，位于低地址部分</li><li>用户区： 出系统区外，用户使用的部分。</li></ol></blockquote><ul><li><p>特点：</p><p>简单，无<code>外部碎片</code></p><p>只能用于<code>单用户、单任务</code>的操作系统，有<code>内部碎片</code>，存储器利用率低。</p></li></ul><h6 id="4-2-固定分区分配"><a href="#4-2-固定分区分配" class="headerlink" title="4.2 固定分区分配"></a>4.2 固定分区分配</h6><blockquote><p>最简单的一种多道程序存储管理方式。将用户空间分为若干固定的区域，每个分区只有一个作业。</p></blockquote><p><strong>特点</strong>：</p><ul><li>缺乏灵活性</li><li>程序太小时，浪费内存，产生<code>内部碎片</code>。</li><li><p>程序过大时，装不下。</p><p><strong>数据结构：（分区说明表）</strong></p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211129105548027.png" alt="image-20211129105548027" style="zoom:50%;"></p></li></ul><h6 id="4-3-动态分区分配"><a href="#4-3-动态分区分配" class="headerlink" title="4.3 动态分区分配"></a>4.3 动态分区分配</h6><blockquote><p>也称可变分区分配，事先不分配，等到进程进入内存时动态分配。</p></blockquote><p><strong>方法：</strong></p><ul><li>记录空闲内存使用情况的数据结构：<ul><li>空闲分区表</li><li>空闲分区链</li></ul></li><li>存储分配算法：</li><li>内存回收<ul><li>回收内存块前后无空闲</li><li>回收内存块前有空闲</li><li>回收内存块后有空闲</li><li>回收内存块前后都有空闲</li></ul></li></ul><h5 id="五、-内部碎片和外部碎片"><a href="#五、-内部碎片和外部碎片" class="headerlink" title="五、 内部碎片和外部碎片"></a>五、 内部碎片和外部碎片</h5><ul><li><p>内部碎片</p><blockquote><p>分配的内存空间比申请的内存大。</p></blockquote></li><li><p>外部碎片</p><blockquote><p>整个可用的内存空间可以满足一个请求，但它并不连续。</p><p>通过<code>紧凑</code>的方式处理外部碎片。</p></blockquote></li></ul><h5 id><a href="#" class="headerlink" title=" "></a> </h5>]]></content>
       
       
       <categories>
@@ -21,6 +21,31 @@
         <tags>
             
             <tag> 操作系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>软件工程课程介绍</title>
+      <link href="/2021/11/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0/"/>
+      <url>/2021/11/29/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%A6%82%E8%BF%B0/</url>
+      
+        <content type="html"><![CDATA[<h4 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h4><blockquote><p>无作业，有研讨，小组完成3个实验报告。 </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件工程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件工程 </tag>
             
         </tags>
       
