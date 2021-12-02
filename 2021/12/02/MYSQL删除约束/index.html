@@ -11,7 +11,7 @@ if (windowWidth > 768)
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="galleries, SHU  CES 视觉SLAM ">
+    <meta name="keywords" content="MySQL删除约束, SHU  CES 视觉SLAM ">
     <meta name="description" content="计算机科学与技术 | SLAM蒟蒻">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -23,7 +23,7 @@ if (windowWidth > 768)
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>galleries | rainbow&#39;s blog</title>
+    <title>MySQL删除约束 | rainbow&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/favicon1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/libs/awesome/css/all.css">
@@ -447,12 +447,12 @@ if (windowWidth > 768)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">galleries</h1>
+                    <h1 class="description center-align post-title">MySQL删除约束</h1>
                 </div>
             </div>
         </div>
@@ -566,12 +566,25 @@ if (windowWidth > 768)
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">
+                                <span class="chip bg-color">数据库实验</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -580,21 +593,21 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-12-14
+                    2021-12-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-30
+                    2021-12-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    188
                 </div>
                 
 
@@ -624,7 +637,31 @@ if (windowWidth > 768)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h4 id="删除主键约束、唯一约束、外键约束方法："><a href="#删除主键约束、唯一约束、外键约束方法：" class="headerlink" title="删除主键约束、唯一约束、外键约束方法："></a>删除主键约束、唯一约束、外键约束方法：</h4><ul>
+<li>问题由来：</li>
+</ul>
+<blockquote>
+<p>在为数据表中添加数据时，碰到了<code>1062 - Duplicate entry &#39;1102&#39; for key &#39;e.Xh</code> 的问题，当时很疑惑，原来是当初在创建数据表e时添加了<code>unique</code>的属性，当数据中出现相同的内容（如1102重复出现）产生此错误。</p>
+<p>数据表e结构如下(已修改)：</p>
+<p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211202224343881.png" alt="image-20211202224343881"></p>
+</blockquote>
+<ul>
+<li>解决方法如下：</li>
+</ul>
+<ol>
+<li>删除主键约束：</li>
+</ol>
+<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">alter table e drop primary key;
+-- e 为数据表名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol>
+<li>删除唯一约束：<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">alter table e drop index Xh;
+-- e 为数据表名
+-- Xh 为需要删除约束的索引<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>删除外键约束：<pre class="line-numbers language-mysql" data-language="mysql"><code class="language-mysql">alter table e drop foreign key colname;
+-- e 为数据表名 
+-- colname 为需要删除外键的索引<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+
                 
             </div>
             <hr/>
@@ -650,7 +687,7 @@ if (windowWidth > 768)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shu-rainbow.space/galleries/index.html">https://www.shu-rainbow.space/galleries/index.html</a>
+                    <a href="https://www.shu-rainbow.space/2021/12/02/MYSQL%E5%88%A0%E9%99%A4%E7%BA%A6%E6%9D%9F/">https://www.shu-rainbow.space/2021/12/02/MYSQL%E5%88%A0%E9%99%A4%E7%BA%A6%E6%9D%9F/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -687,7 +724,11 @@ if (windowWidth > 768)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">
+                                    <span class="chip bg-color">数据库实验</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -954,13 +995,13 @@ if (windowWidth > 768)
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/galleries/index.html">
+                <a href="/2021/12/02/MYSQL%E5%88%A0%E9%99%A4%E7%BA%A6%E6%9D%9F/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="galleries">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/17.jpg" class="responsive-img" alt="MySQL删除约束">
                         
-                        <span class="card-title">galleries</span>
+                        <span class="card-title">MySQL删除约束</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -971,17 +1012,29 @@ if (windowWidth > 768)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            rainbow
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E9%AA%8C/">
+                        <span class="chip bg-color">数据库实验</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -989,16 +1042,16 @@ if (windowWidth > 768)
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/galleries/index.html">
+                <a href="/2021/12/01/%E6%97%8B%E8%BD%AC%E5%90%91%E9%87%8F/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="galleries">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="旋转向量和欧拉角">
                         
-                        <span class="card-title">galleries</span>
+                        <span class="card-title">旋转向量和欧拉角</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1009,17 +1062,28 @@ if (windowWidth > 768)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            rainbow
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/SLAM/" class="post-category">
+                                    SLAM
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SLAM/">
+                        <span class="chip bg-color">SLAM</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1184,6 +1248,13 @@ if (windowWidth > 768)
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
