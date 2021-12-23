@@ -600,14 +600,14 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-10-24
+                    2021-12-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    343
+                    366
                 </div>
                 
 
@@ -637,15 +637,16 @@ if (windowWidth > 768)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="方向控制"><a href="#方向控制" class="headerlink" title="方向控制"></a>方向控制</h3><h4 id="1-含有车道线的图片（三张）"><a href="#1-含有车道线的图片（三张）" class="headerlink" title="1.含有车道线的图片（三张）"></a>1.含有车道线的图片（三张）</h4><blockquote>
+                <h3 id="方向控制"><a href="#方向控制" class="headerlink" title="方向控制"></a>方向控制</h3><blockquote>
+<p>本文档内图片上传功能出现异常，可私信获取结果图片</p>
+</blockquote>
+<h4 id="1-含有车道线的图片（三张）"><a href="#1-含有车道线的图片（三张）" class="headerlink" title="1.含有车道线的图片（三张）"></a>1.含有车道线的图片（三张）</h4><blockquote>
 <p>①居中</p>
-<img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car.png" alt="car" style="zoom:25%;">
-
+<p><img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car.png" alt="car" style="zoom:25%;"></p>
 <p>②偏左</p>
-<img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car1.png" alt="car1" style="zoom:25%;">
-
+<p><img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car1.png" alt="car1" style="zoom:25%;"></p>
 <p>③偏右</p>
-<img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car2.png" alt="car2" style="zoom:25%;">
+<p><img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/Users\402\Downloads\car2.png" alt="car2" style="zoom:25%;"></p>
 </blockquote>
 <h4 id="2-图像处理"><a href="#2-图像处理" class="headerlink" title="2.图像处理"></a>2.图像处理</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span>image<span class="token punctuation">)</span><span class="token punctuation">:</span>
     img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span>image<span class="token punctuation">)</span>
@@ -680,9 +681,7 @@ if (windowWidth > 768)
         <span class="token keyword">return</span> <span class="token string">"right"</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         <span class="token keyword">return</span> <span class="token string">"center"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="3-结果"><a href="#3-结果" class="headerlink" title="3.结果"></a>3.结果</h4><img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/ZB\计院2022\算法\OpencvCode\车道测试图片\结果1.png" alt="结果1" style="zoom:100%;">
-
+<h4 id="3-结果"><a href="#3-结果" class="headerlink" title="3.结果"></a>3.结果</h4><p><img src="/2021/10/24/%E6%96%B9%E5%90%91%E6%8E%A7%E5%88%B6/ZB\计院2022\算法\OpencvCode\车道测试图片\结果1.png" alt="结果1" style="zoom:100%;"></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">"""
 调节图片大小
 """</span>
@@ -699,7 +698,6 @@ resized <span class="token operator">=</span> cv2<span class="token punctuation"
 cv2<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span><span class="token string">'Resized image'</span><span class="token punctuation">,</span>resized<span class="token punctuation">)</span>
 cv2<span class="token punctuation">.</span>waitkey<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 
                 
             </div>
@@ -1033,13 +1031,13 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/10/24/%E5%8F%8C%E7%9B%AE%E6%B5%8B%E8%B7%9D/">
+                <a href="/2021/11/13/testPicture/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="双目测距">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="testPicture">
                         
-                        <span class="card-title">双目测距</span>
+                        <span class="card-title">testPicture</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1050,14 +1048,14 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-13
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/" class="post-category">
-                                    智能小车
+                            <a href="/categories/test/" class="post-category">
+                                    test
                                 </a>
                             
                             
@@ -1067,8 +1065,8 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/">
-                        <span class="chip bg-color">智能小车</span>
+                    <a href="/tags/test/">
+                        <span class="chip bg-color">test</span>
                     </a>
                     
                 </div>
@@ -1082,13 +1080,13 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/24/%E5%B0%8F%E8%BD%A6%E8%AE%BE%E8%AE%A1%E6%B5%81%E7%A8%8B/">
+                <a href="/2021/10/24/%E6%B5%8B%E8%B7%9D%E5%8E%9F%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="小车设计流程">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="测距原理">
                         
-                        <span class="card-title">小车设计流程</span>
+                        <span class="card-title">测距原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1103,12 +1101,8 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%99%BA%E8%83%BD%E5%B0%8F%E8%BD%A6/" class="post-category">
-                                    智能小车
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            rainbow
                             
                         </span>
                     </div>
@@ -1305,7 +1299,7 @@ cv2<span class="token punctuation">.</span>destroyAllWindows<span class="token p
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.9k</span>&nbsp;字
+                class="white-color">11k</span>&nbsp;字
             
             
             
