@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>YuNet_demo</title>
+      <link href="/2021/12/24/YuNet_demo/"/>
+      <url>/2021/12/24/YuNet_demo/</url>
+      
+        <content type="html"><![CDATA[<h5 id="食用方式"><a href="#食用方式" class="headerlink" title="食用方式"></a>食用方式</h5><ul><li><h5 id="代码下载链接"><a href="#代码下载链接" class="headerlink" title="代码下载链接"></a>代码下载链接</h5></li></ul><blockquote><p><a href="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/dataset/test.zip">demo代码压缩包</a></p></blockquote><ul><li><h5 id="结构如下图"><a href="#结构如下图" class="headerlink" title="结构如下图"></a>结构如下图</h5></li></ul><blockquote><p>其中的face.jpg是我从网上随便找的一张QAQ，可以随便更改。</p></blockquote><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211224163201636.png" alt="image-20211224163201636"></p><ul><li><h5 id="运行方式（在powershell中）"><a href="#运行方式（在powershell中）" class="headerlink" title="运行方式（在powershell中）"></a>运行方式（在powershell中）</h5></li></ul><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">python test<span class="token punctuation">.</span>py <span class="token operator">--</span>input face<span class="token punctuation">.</span>jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li><h5 id="结果如下图"><a href="#结果如下图" class="headerlink" title="结果如下图"></a>结果如下图</h5></li></ul><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211224164537995.png" alt="image-20211224164537995"></p><ul><li><h5 id="结果解释（框中的15个参数见下图解释）"><a href="#结果解释（框中的15个参数见下图解释）" class="headerlink" title="结果解释（框中的15个参数见下图解释）"></a>结果解释（框中的15个参数见下图解释）</h5></li></ul><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20211224164804005.png" alt="image-20211224164804005"></p><ul><li><p>参考链接：</p><blockquote><p><a href="https://github.com/opencv/opencv_zoo/tree/master/models/face_detection_yunet">https://github.com/opencv/opencv_zoo/tree/master/models/face_detection_yunet</a></p><p><a href="https://github.com/opencv/opencv_zoo/">https://github.com/opencv/opencv_zoo/</a></p><p><a href="https://zhuanlan.zhihu.com/p/423625566">https://zhuanlan.zhihu.com/p/423625566</a></p><p><a href="https://www.bilibili.com/video/BV1SQ4y1U75c?spm_id_from=333.999.0.0">https://www.bilibili.com/video/BV1SQ4y1U75c?spm_id_from=333.999.0.0</a></p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 模式识别 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> YuNet </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>贝叶斯分类器设计</title>
       <link href="/2021/12/20/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8%E8%AE%BE%E8%AE%A1/"/>
       <url>/2021/12/20/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%88%86%E7%B1%BB%E5%99%A8%E8%AE%BE%E8%AE%A1/</url>
