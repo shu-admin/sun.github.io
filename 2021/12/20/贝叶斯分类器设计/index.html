@@ -600,7 +600,7 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-23
+                    2021-12-28
                 </div>
                 
 
@@ -658,15 +658,15 @@ P({A}|{B}) = \frac{P(B|A)P(A)}{P({B})}</script><ul>
         dataset<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token builtin">float</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> dataset<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>
         <span class="token comment">#将每一行的每一个数据改为float类型</span>
     <span class="token keyword">return</span> dataset<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h5 id="3-2-划分数据集与训练集"><a href="#3-2-划分数据集与训练集" class="headerlink" title="3.2 划分数据集与训练集"></a>3.2 划分数据集与训练集</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">splitDataset</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<h5 id="3-2-划分数据集与训练集"><a href="#3-2-划分数据集与训练集" class="headerlink" title="3.2 划分数据集与训练集"></a>3.2 划分数据集与训练集</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">splitDataset</span><span class="token punctuation">(</span>dataset<span class="token punctuation">,</span>splitRatio<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment">#按照一定比例划分数据集</span>
     trainSize <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token operator">*</span>splitRatio<span class="token punctuation">)</span>
     <span class="token comment">#splitRadio为训练集的比例</span>
-    trianSet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    trainSet <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     testSet <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token comment">#创建数据集副本，用作测试集</span>
     <span class="token keyword">while</span> <span class="token builtin">len</span><span class="token punctuation">(</span>trainSet<span class="token punctuation">)</span> <span class="token operator">&lt;</span> trainSize<span class="token punctuation">:</span>
         <span class="token comment">#直到训练集数目满足</span>
-        temp <span class="token operator">=</span> random<span class="token punctuation">.</span>randrange<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>copy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#随机选择一条数据</span>
+        temp <span class="token operator">=</span> random<span class="token punctuation">.</span>randrange<span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>testSet<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#随机选择一条数据</span>
         trainSet<span class="token punctuation">.</span>append<span class="token punctuation">(</span>testSet<span class="token punctuation">.</span>pop<span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#向训练集中添加数据,同时测试集删除该条数据</span>
     <span class="token keyword">return</span> <span class="token punctuation">[</span>trainSet<span class="token punctuation">,</span>testSet<span class="token punctuation">]</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="3-3-按类别划分数据"><a href="#3-3-按类别划分数据" class="headerlink" title="3.3 按类别划分数据"></a>3.3 按类别划分数据</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">separateByClass</span><span class="token punctuation">(</span>dataset<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -1576,7 +1576,7 @@ plt<span class="token punctuation">.</span>show<span class="token punctuation">(
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.1k</span>&nbsp;字
+                class="white-color">11.7k</span>&nbsp;字
             
             
             
