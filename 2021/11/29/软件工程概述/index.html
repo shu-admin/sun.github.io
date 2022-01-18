@@ -1,11 +1,6 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
- <script type="text/javascript"> //只在桌面版网页启用特效 
-var windowWidth = $(window).width(); 
-if (windowWidth > 768) 
-{ document.write('<script type="text/javascript" src="/js/sakura.js">'); }
-</script> 
 
 
 
@@ -1078,7 +1073,7 @@ if (windowWidth > 768)
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('20')) {
+        if (('' + selection).length < Number.parseInt('200')) {
             return;
         }
 
@@ -1243,16 +1238,16 @@ if (windowWidth > 768)
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
-            <span id="year">2020</span>
+            <!-- <span id="year">2020</span> -->
             <a href="/about" target="_blank">rainbow</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.7k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             

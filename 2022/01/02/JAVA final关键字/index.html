@@ -1,17 +1,12 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
- <script type="text/javascript"> //只在桌面版网页启用特效 
-var windowWidth = $(window).width(); 
-if (windowWidth > 768) 
-{ document.write('<script type="text/javascript" src="/js/sakura.js">'); }
-</script> 
 
 
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SHU  CES 视觉SLAM ">
+    <meta name="keywords" content="JAVA final关键字, SHU  CES 视觉SLAM ">
     <meta name="description" content="计算机科学与技术 | SLAM蒟蒻">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -23,7 +18,7 @@ if (windowWidth > 768)
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>rainbow&#39;s blog</title>
+    <title>JAVA final关键字 | rainbow&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/favicon1.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/libs/awesome/css/all.css">
@@ -447,12 +442,12 @@ if (windowWidth > 768)
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">JAVA final关键字</h1>
                 </div>
             </div>
         </div>
@@ -566,12 +561,25 @@ if (windowWidth > 768)
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JAVA/">
+                                <span class="chip bg-color">JAVA</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JAVA-%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                JAVA 实践
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -580,21 +588,21 @@ if (windowWidth > 768)
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-29
+                    2022-01-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-12-29
+                    2022-01-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    441
                 </div>
                 
 
@@ -624,7 +632,29 @@ if (windowWidth > 768)
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h3 id="1-修饰类"><a href="#1-修饰类" class="headerlink" title="1. 修饰类"></a>1. 修饰类</h3><p>当用final修饰一个类时，<strong>表明这个类不能被继承</strong>。也就是说，如果一个类你永远不会让他被继承，就可以用final进行修饰。final类中的成员变量可以根据需要设为final，但是要注意final类中的所有成员方法都会被隐式地指定为final方法。</p>
+<blockquote>
+<p>在使用final修饰类的时候，要注意谨慎选择，除非这个类真的在以后不会用来继承或者出于安全的考虑，尽量不要将类设计为final类。</p>
+</blockquote>
+<h3 id="2-修饰方法"><a href="#2-修饰方法" class="headerlink" title="2.修饰方法"></a>2.修饰方法</h3><p>使用final方法的原因有两个。第一个原因是把方法锁定，以防任何继承类修改它的含义；第二个原因是效率。在早期的Java实现版本中，会将final方法转为内嵌调用。但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升。在最近的Java版本中，不需要使用final方法进行这些优化了。</p>
+<p><strong>类的private方法会隐式地被指定为final方法。</strong></p>
+<h4 id="3-修饰变量"><a href="#3-修饰变量" class="headerlink" title="3.修饰变量"></a>3.修饰变量</h4><p>对于一个final变量，如果是基本数据类型的变量，<strong>则其数值一旦在初始化之后便不能更改</strong>；如果是引用类型的变量，则<strong>在对其初始化之后便不能再让其指向另一个对象</strong>。</p>
+<ul>
+<li>修饰基本类型的变量</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">final</span> <span class="token keyword">int</span> <span class="token class-name">C</span> <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">//C此时为常量</span>
+<span class="token comment">//下面的修改会报错</span>
+<span class="token class-name">C</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token comment">//Cannot assign a value to final variable 'C'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>修饰引用型的变量</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">final</span> <span class="token class-name">Object</span> object <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//当final修饰引用型变量后，不能指向另一个对象，</span>
+<span class="token comment">//下面修改会报错</span>
+object <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//Cannot assign a value to final variable 'object'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>
@@ -650,7 +680,7 @@ if (windowWidth > 768)
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.shu-rainbow.space/2021/12/29/K-NN%E7%AE%97%E6%B3%95/">https://www.shu-rainbow.space/2021/12/29/K-NN%E7%AE%97%E6%B3%95/</a>
+                    <a href="https://www.shu-rainbow.space/2022/01/02/JAVA%20final%E5%85%B3%E9%94%AE%E5%AD%97/">https://www.shu-rainbow.space/2022/01/02/JAVA%20final%E5%85%B3%E9%94%AE%E5%AD%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -687,7 +717,11 @@ if (windowWidth > 768)
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/JAVA/">
+                                    <span class="chip bg-color">JAVA</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -949,18 +983,17 @@ if (windowWidth > 768)
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/29/K-NN%E7%AE%97%E6%B3%95/">
+                <a href="/2022/01/02/Java%20Swing/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="Java Swing">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Java Swing</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -970,18 +1003,29 @@ if (windowWidth > 768)
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-02
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            rainbow
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JAVA%E5%AE%9E%E8%B7%B5/" class="post-category">
+                                    JAVA实践
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JAVA-SWING/">
+                        <span class="chip bg-color">JAVA SWING</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -992,13 +1036,13 @@ if (windowWidth > 768)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/28/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/">
+                <a href="/2022/01/01/K-NN%E7%AE%97%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="https://cdn.jsdelivr.net/gh/shu-admin/sun.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="k-NN算法">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">k-NN算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1009,15 +1053,27 @@ if (windowWidth > 768)
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-01
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            rainbow
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB/" class="post-category">
+                                    模式识别
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/k-NN/">
+                        <span class="chip bg-color">k-NN</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1036,7 +1092,7 @@ if (windowWidth > 768)
 
         var selection = window.getSelection();
         // if the selection is short let's not annoy our users.
-        if (('' + selection).length < Number.parseInt('20')) {
+        if (('' + selection).length < Number.parseInt('200')) {
             return;
         }
 
@@ -1184,6 +1240,13 @@ if (windowWidth > 768)
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
@@ -1194,16 +1257,16 @@ if (windowWidth > 768)
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2020-2021</span>
+                <span id="year">2020-2022</span>
             
-            <span id="year">2020</span>
+            <!-- <span id="year">2020</span> -->
             <a href="/about" target="_blank">rainbow</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.7k</span>&nbsp;字
+                class="white-color">13.8k</span>&nbsp;字
             
             
             
