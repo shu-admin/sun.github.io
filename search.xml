@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>云服务器搭建个人网盘</title>
+      <link href="/2022/04/29/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/"/>
+      <url>/2022/04/29/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/</url>
+      
+        <content type="html"><![CDATA[<h3 id="基于nextcloud使用华为云服务器搭建个人网盘的简易教程"><a href="#基于nextcloud使用华为云服务器搭建个人网盘的简易教程" class="headerlink" title="基于nextcloud使用华为云服务器搭建个人网盘的简易教程"></a>基于nextcloud使用华为云服务器搭建个人网盘的简易教程</h3><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429230053895.png" alt="image-20220429230053895" style="zoom: 67%;"></p><p>一直想搭建一个私有网盘，刚好上学期《模式识别》课白嫖了一年的华为云服务器，于是使用此服务器基于nextcloud搭建了自己的网盘。另外考虑到服务器磁盘容量不是很充足，便采用阿里云的oss对象存储（之前搭建图床9元一年买的，还是很香的）作为拓展盘存储。</p><ul><li><p>一、服务器安装宝塔</p><p>本服务器系统使用的是centos7.9,安装命令如下</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">yum <span class="token function">install</span> -y <span class="token function">wget</span> <span class="token operator">&amp;&amp;</span> <span class="token function">wget</span> -O install.sh http://download.bt.cn/install/install_6.0.sh <span class="token operator">&amp;&amp;</span> <span class="token function">sh</span> install.sh 12f2c1d72<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>1.bt官网上说centos8及以上已经停止支持，建议更换到低版本。</p><p>2.Ubuntu/Deepin安装命令如下</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span class="token operator">&amp;&amp;</span> <span class="token function">sudo</span> <span class="token function">bash</span> install.sh 12f2c1d72<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>3.Debian安装命令如下</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">wget</span> -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span class="token operator">&amp;&amp;</span> <span class="token function">bash</span> install.sh 12f2c1d72<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>4.<a href="https://www.bt.cn/bbs/thread-19376-1-1.html">参考官网链接</a></p></blockquote><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429202431092.png" alt="image-20220429202431092" style="zoom:50%;"></p><p>安装完成后用终端中的账号、密码信息登录即可，界面如下。</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429211128425.png" alt="image-20220429211128425" style="zoom: 50%;"></p></li><li><p>二、安装nginx、mysql、php</p><p>可以通过bt的【软件商店】进行安装</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429211714910.png" alt="image-20220429211714910" style="zoom:67%;"></p><blockquote><p>本人使用的mysql8.0+php7.2（nextcloud对于php7.4及以上版本不支持)</p></blockquote></li><li><p>三、创建网站站点</p><p>在bt的【网站】下创建站点，操作如下图</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429212202153.png" alt="image-20220429212202153" style="zoom: 67%;"></p></li><li><p>四、下载安装nextcloud</p><p>​    1.在自己刚刚创建的站点目录下通过远程下载方式下载，nextcloud20.0.4<a href="https://download.nextcloud.com/server/releases/nextcloud-20.0.4.zip">下载链接</a></p></li></ul><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429212643246.png" alt="image-20220429212643246" style="zoom: 67%;"></p><p>​            2.解压，修改网站站点配置文件如下图第6行，将nextcloud目录添加进去。</p><p>​                <img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429214253411.png" style="zoom:67%;"></p><p>​            3.至此，配置工作完成，在浏览器输入域名或ip即可访问如下页面。</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429214411881.png" alt="image-20220429214411881" style="zoom: 50%;"></p><ul><li><p>五、优化加载速率</p><p>优化原理是对php进行加速，具体原理参考一篇博客，<a href="https://blog.csdn.net/i12344/article/details/107712473">链接</a></p><p>具体操作如下：</p><p>1.后台任务采用<code>Cron</code>配置，在nextcloud的管理页面中设置，如下图</p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429224522282.png" alt="image-20220429224522282" style="zoom: 67%;"></p><p>同时，在服务器终端中添加crontab定时任务</p><pre class="line-numbers language-bas" data-language="bas"><code class="language-bas">crontab -e<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>按下<code>i</code>键，切换为<code>insert</code>模式，向其中添加一行如下配置语句</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">*/5 * * * * <span class="token function">sudo</span> -u www php -f /www/wwwroot/122.9.130.89/cron.php<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>按下<code>ESC</code>键，输入<code>:wq</code>保存退出即可。</p><p>2.开启HTTP2</p><p>本人未使用，读者可以自行搜索相关方法。</p><p>3.优化PHP-FPM参数</p><p>主要修改<code>max_children</code>,<code>start_servers</code>,<code>min_spare_servers</code>,<code>max_spare_servers</code>,<code>运行模式</code></p><p><img src="https://rainbow-blog.oss-cn-beijing.aliyuncs.com/img/image-20220429225505653.png" alt="image-20220429225505653" style="zoom: 80%;"></p></li><li><p>六、完结</p><p>恭喜你，成功搭建了自己的云盘，可以开心使用啦！</p><p>本文避开了一些易错的弯路，如果遇到配置问题，可以通过本人<a href="www.shu-rainbow.space">博客</a>或者知乎私信我，欢迎大家进行交流探讨QAQ。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 云服务器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 个人网盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【软件工程】实验八自行车租赁系统</title>
       <link href="/2022/02/28/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E9%AA%8C%E5%85%AB/"/>
       <url>/2022/02/28/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AE%9E%E9%AA%8C%E5%85%AB/</url>
